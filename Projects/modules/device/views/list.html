@@ -1,0 +1,33 @@
+<table class="table table-bordered table-dark">
+    <thead>
+        <tr>
+            <th scope="col">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="autoSizingCheck2">
+                    <label class="form-check-label" for="autoSizingCheck2">
+                    </label>
+                </div>
+            </th>
+            <th scope="col">Device Name</th>
+            <th scope="col">Artist</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="device in lsDev">
+            <th scope="row">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="autoSizingCheck2">
+                </div>
+            </th>
+            <td>{{device.device_name}}</td>
+            <td>{{device.artist}}</td>
+            <th>
+                <button type="button" class="btn btn-primary btn-sm" ng-click="selectDevice(device.id)">Update</button>
+                <button type="button" class="btn btn-danger btn-sm" ng-click="deleteDevice(device.id)">Delete</button>
+            </th>
+        </tr>
+    </tbody>
+</table>
+<ul class="pagination" uib-pagination direction-links="false" total-items="totalItems" ng-model="currentPage"
+    items-per-page="pageSize" ng-change="pageChanged()"></ul>

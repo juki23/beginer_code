@@ -1,0 +1,7 @@
+.nav-item:hover{
+    background-color: silver !important;   
+}
+
+.nav-item a:hover{
+    color: rgb(49, 45, 45) !important;   
+}

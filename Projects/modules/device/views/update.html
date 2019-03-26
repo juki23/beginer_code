@@ -1,0 +1,37 @@
+<form style="padding:15px;">
+    <div class="form-group row">
+        <label for="staticDeviceName" class="col-sm-2 col-form-label">Device Name</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="staticDeviceName"
+                ng-class="{'is-valid' : submitTime > 0 && !lsError.device_name, 'is-invalid' : lsError.device_name}"
+                placeholder="Device Name" ng-model="data.device_name">
+            <div class="invalid-feedback">
+                {{lsError.device_name.msg}}
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputArtist" class="col-sm-2 col-form-label">Artist</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputArtist" placeholder="Artist" ng-model="data.artist">
+        </div>
+    </div>
+    <div style="float:right;">
+        <button type="submit" class="btn btn-primary" ng-click="saveDevice(data)">
+            {{ data.id ? 'Apply' : 'Create'}}</button>
+        <button type="submit" class="btn btn-dark" ui-sref="authentication.device.list">Back</button>
+    </div>
+</form>
+
+<!-- <div class="col-md-6 mb-3">
+            <label>Product Name</label>
+            <input type="text" class="form-control" placeholder="First name"
+                ng-class="{'is-valid' : submitTime > 0 && !lsError.product_name, 'is-invalid' : lsError.product_name}"
+                ng-model="data.product_name">
+            <small class="form-text text-muted"
+                ng-class="{'text-muted' : submitTime === 0,'text-success' : submitTime > 0 && !lsError.product_name,'text-danger' : lsError.product_name}">
+                Product Name is not empty.</small>
+            <div class="invalid-feedback">
+                {{lsError.product_name.msg}}
+            </div>
+        </div> -->
